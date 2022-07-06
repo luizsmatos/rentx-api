@@ -7,7 +7,8 @@
       "test": "echo \"Error: no test specified\" && exit 1",
       "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts",
       "start": "ts-node src/index.ts",
-      "typeorm": "typeorm-ts-node-commonjs"
+      "typeorm": "typeorm-ts-node-esm -d ./src/shared/infra/typeorm/index.ts",
+      "migration:create": "typeorm-ts-node-esm migration:create ./src/shared/infra/typeorm/migrations/$npm_config_name"
    },
    "dependencies": {
       "csv-parse": "^5.0.4",
