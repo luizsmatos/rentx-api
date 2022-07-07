@@ -1,18 +1,18 @@
-import 'reflect-metadata';
-import 'dotenv/config';
-
+import { Category } from '@modules/cars/entities/Category';
 import { DataSource } from 'typeorm';
+
+import { CreateCategories1657024580247 } from './migrations/1657024580247-CreateCategories';
 
 const dataSource = new DataSource({
   type: 'postgres',
-  host: process.env.DB_HOST,
   port: parseInt(process.env.DB_PORT, 10),
   username: process.env.DB_USERNAME,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
-  synchronize: true,
+  synchronize: false,
   logging: false,
-  migrations: [process.env.TYPEORM_MIGRATIONS],
+  migrations: [CreateCategories1657024580247],
+  entities: [Category],
   subscribers: [],
 });
 
