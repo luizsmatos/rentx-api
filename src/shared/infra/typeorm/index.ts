@@ -1,3 +1,6 @@
+import 'reflect-metadata';
+import 'dotenv/config';
+
 import { Category } from '@modules/cars/entities/Category';
 import { DataSource } from 'typeorm';
 

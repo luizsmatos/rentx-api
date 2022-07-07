@@ -1,7 +1,3 @@
-import 'reflect-metadata';
-import 'dotenv/config';
-import '@shared/infra/typeorm';
-
 import express from 'express';
 import swaggerUi from 'swagger-ui-express';
 
