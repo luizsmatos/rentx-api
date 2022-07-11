@@ -1,12 +1,14 @@
 import 'reflect-metadata';
 import 'dotenv/config';
 
+import { User } from '@modules/accounts/entities/User';
 import { Category } from '@modules/cars/entities/Category';
 import { Specification } from '@modules/cars/entities/Specification';
 import { DataSource } from 'typeorm';
 
 import { CreateCategories1657024580247 } from './migrations/1657024580247-CreateCategories';
 import { CreateSpecifications1657309295662 } from './migrations/1657309295662-CreateSpecifications';
+import { CreateUsers1657540235733 } from './migrations/1657540235733-CreateUsers';
 
 const dataSource = new DataSource({
   type: 'postgres',
@@ -19,8 +21,9 @@ const dataSource = new DataSource({
   migrations: [
     CreateCategories1657024580247,
     CreateSpecifications1657309295662,
+    CreateUsers1657540235733,
   ],
-  entities: [Category, Specification],
+  entities: [Category, Specification, User],
   subscribers: [],
 });
 
