@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "RentalX Documentation",
+    "title": "RentX Documentation",
     "description": "RentalX API documentation",
     "version": "1.0.0",
     "contact": {
@@ -11,9 +11,7 @@
   "paths": {
     "/categories": {
       "post": {
-        "tags": [
-          "Category"
-        ],
+        "tags": ["Category"],
         "summary": "Create a category",
         "description": "Create a new category",
         "requestBody": {
@@ -49,9 +47,7 @@
         }
       },
       "get": {
-        "tags": [
-          "Category"
-        ],
+        "tags": ["Category"],
         "summary": "List all categories",
         "description": "List all categories",
         "responses": {
@@ -77,6 +73,76 @@
             }
           }
         }
+      }
+    },
+    "/categories/import": {
+      "post": {
+        "tags": ["Category"],
+        "summary": "Upload a new category",
+        "description": "Upload a new category",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
+    "/specifications": {
+      "post": {
+        "tags": ["Specification"],
+        "summary": "Create a specification",
+        "description": "Create a new specification",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definitions/Specification"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Specification created"
+          },
+          "500": {
+            "description": "Specification already exists!"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Specification": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Specification name"
+        },
+        "description": {
+          "type": "string",
+          "description": "Specification description"
+        }
+      },
+      "example": {
+        "name": "Specification name sample",
+        "description": "Specification description sample"
       }
     }
   }
