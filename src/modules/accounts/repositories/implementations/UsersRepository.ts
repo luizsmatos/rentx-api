@@ -13,6 +13,12 @@ class UsersRepository implements IUsersRepository {
     this.repository = dataSource.getRepository(User);
   }
 
+  findByEmail(email: string): Promise<User> {
+    const user = this.repository.findOneBy({ email });
+
+    return user;
+  }
+
   async create({
     name,
     password,
