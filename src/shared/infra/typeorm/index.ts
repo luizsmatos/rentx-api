@@ -9,6 +9,7 @@ import { DataSource } from 'typeorm';
 import { CreateCategories1657024580247 } from './migrations/1657024580247-CreateCategories';
 import { CreateSpecifications1657309295662 } from './migrations/1657309295662-CreateSpecifications';
 import { CreateUsers1657540235733 } from './migrations/1657540235733-CreateUsers';
+import { AlterUserDeleteUsername1657590170490 } from './migrations/1657590170490-AlterUserDeleteUsername';
 
 const dataSource = new DataSource({
   type: 'postgres',
@@ -22,6 +23,7 @@ const dataSource = new DataSource({
     CreateCategories1657024580247,
     CreateSpecifications1657309295662,
     CreateUsers1657540235733,
+    AlterUserDeleteUsername1657590170490,
   ],
   entities: [Category, Specification, User],
   subscribers: [],
