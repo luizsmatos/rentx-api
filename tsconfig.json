@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es2018",
     "module": "commonjs",
     "rootDir": "./",
     "baseUrl": ".",
     "outDir": "./dist",
     "paths": {
       "@modules/*": ["./src/modules/*"],
+      "@middlewares/*": ["./src/middlewares/*"],
       "@config/*": ["./src/config/*"],
       "@shared/*": ["./src/shared/*"],
       "@errors/*": ["./src/errors/*"],
@@ -15,7 +16,6 @@
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true
   }
