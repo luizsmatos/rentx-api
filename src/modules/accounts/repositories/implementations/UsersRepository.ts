@@ -1,7 +1,7 @@
-import { ICreateUserDTO } from '@modules/accounts/dtos/ICreateUserDTO';
-import { User } from '@modules/accounts/entities/User';
 import { Repository } from 'typeorm';
 
+import { ICreateUserDTO } from '@modules/accounts/dtos/ICreateUserDTO';
+import { User } from '@modules/accounts/entities/User';
 import dataSource from '@shared/infra/typeorm';
 
 import { IUsersRepository } from '../IUsersRepository';

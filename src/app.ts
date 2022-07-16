@@ -1,6 +1,7 @@
-import { AppError } from '@errors/AppError';
 import express, { Request, Response, NextFunction } from 'express';
 import swaggerUi from 'swagger-ui-express';
+
+import { AppError } from '@errors/AppError';
 import '@shared/container';
 import 'express-async-errors';
 

@@ -1,10 +1,11 @@
 import 'reflect-metadata';
 import 'dotenv/config';
 
+import { DataSource } from 'typeorm';
+
 import { User } from '@modules/accounts/entities/User';
 import { Category } from '@modules/cars/entities/Category';
 import { Specification } from '@modules/cars/entities/Specification';
-import { DataSource } from 'typeorm';
 
 import { CreateCategories1657024580247 } from './migrations/1657024580247-CreateCategories';
 import { CreateSpecifications1657309295662 } from './migrations/1657309295662-CreateSpecifications';
