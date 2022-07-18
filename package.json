@@ -14,7 +14,8 @@
     "migration:generate": "yarn typeorm migration:generate",
     "migration:run": "yarn typeorm migration:run",
     "migration:revert": "yarn typeorm migration:revert",
-    "schema:sync": "yarn typeorm schema:sync"
+    "schema:sync": "yarn typeorm schema:sync",
+    "seed:admin": "ts-node-dev -r tsconfig-paths/register  src/shared/infra/typeorm/seed/admin.ts"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
