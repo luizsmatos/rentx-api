@@ -4,6 +4,7 @@ import 'dotenv/config';
 import { DataSource } from 'typeorm';
 
 import { User } from '@modules/accounts/infra/typeorm/entities/User';
+import { Car } from '@modules/cars/infra/typeorm/entities/Car';
 import { Category } from '@modules/cars/infra/typeorm/entities/Category';
 import { Specification } from '@modules/cars/infra/typeorm/entities/Specification';
 
@@ -28,7 +29,7 @@ const dataSource = new DataSource({
     AlterUserDeleteUsername1657590170490,
     CreateCars1658087024104,
   ],
-  entities: [Category, Specification, User],
+  entities: [Category, Specification, User, Car],
   subscribers: [],
 });
 
