@@ -14,6 +14,7 @@ import { CreateUsers1657540235733 } from './migrations/1657540235733-CreateUsers
 import { AlterUserDeleteUsername1657590170490 } from './migrations/1657590170490-AlterUserDeleteUsername';
 import { CreateCars1658087024104 } from './migrations/1658087024104-CreateCars';
 import { CreateSpecificationsCars1659101345586 } from './migrations/1659101345586-CreateSpecificationsCars';
+import { CreateCarImages1660653155823 } from './migrations/1660653155823-CreateCarImages';
 
 const dataSource = new DataSource({
   type: 'postgres',
@@ -30,6 +31,7 @@ const dataSource = new DataSource({
     AlterUserDeleteUsername1657590170490,
     CreateCars1658087024104,
     CreateSpecificationsCars1659101345586,
+    CreateCarImages1660653155823,
   ],
   entities: [Category, Specification, User, Car],
   subscribers: [],
