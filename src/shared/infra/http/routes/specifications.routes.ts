@@ -4,16 +4,16 @@ import { ensureAdmin } from '@middlewares/ensureAdmin';
 import { ensureAuthenticate } from '@middlewares/ensureAuthenticate';
 import { CreateSpecificationController } from '@modules/cars/useCases/createSpecification/CreateSpecificationController';
 
-const specificationsRouters = Router();
+const specificationsRoutes = Router();
 
 const createSpecificationController = new CreateSpecificationController();
 
-specificationsRouters.use(ensureAuthenticate);
-specificationsRouters.post(
+specificationsRoutes.use(ensureAuthenticate);
+specificationsRoutes.post(
   '/',
   ensureAuthenticate,
   ensureAdmin,
   createSpecificationController.handle,
 );
 
-export { specificationsRouters };
+export { specificationsRoutes };
