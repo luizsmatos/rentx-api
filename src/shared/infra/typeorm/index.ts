@@ -7,6 +7,7 @@ import { User } from '@modules/accounts/infra/typeorm/entities/User';
 import { Car } from '@modules/cars/infra/typeorm/entities/Car';
 import { Category } from '@modules/cars/infra/typeorm/entities/Category';
 import { Specification } from '@modules/cars/infra/typeorm/entities/Specification';
+import { Rental } from '@modules/rentals/infra/typeorm/entities/Rental';
 
 import { CreateCategories1657024580247 } from './migrations/1657024580247-CreateCategories';
 import { CreateSpecifications1657309295662 } from './migrations/1657309295662-CreateSpecifications';
@@ -35,7 +36,7 @@ const dataSource = new DataSource({
     CreateCarImages1660653155823,
     CreateRentals1660914311971,
   ],
-  entities: [Category, Specification, User, Car],
+  entities: [Category, Specification, User, Car, Rental],
   subscribers: [],
 });
 
