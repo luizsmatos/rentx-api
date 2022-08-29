@@ -1,6 +1,6 @@
 import { createConnection } from '@shared/infra/typeorm';
 
-import app from './app';
+import { app } from './app';
 
 createConnection();
 
