@@ -2,6 +2,7 @@ import express, { Request, Response, NextFunction } from 'express';
 import swaggerUi from 'swagger-ui-express';
 
 import { AppError } from '@shared/errors/AppError';
+import 'reflect-metadata';
 import '@shared/container';
 import 'express-async-errors';
 
@@ -28,4 +29,4 @@ app.use(
   },
 );
 
-export default app;
+export { app };
