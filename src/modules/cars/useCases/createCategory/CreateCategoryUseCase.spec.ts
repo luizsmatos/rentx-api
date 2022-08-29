@@ -6,7 +6,7 @@ import { CreateCategoryUseCase } from './CreateCategoryUseCase';
 let createCategoryUseCase: CreateCategoryUseCase;
 let categoriesRepositoryInMemory: CategoriesRepositoryInMemory;
 
-describe('Create Category', () => {
+describe('Create Category Use Case', () => {
   beforeEach(() => {
     categoriesRepositoryInMemory = new CategoriesRepositoryInMemory();
     createCategoryUseCase = new CreateCategoryUseCase(
@@ -32,7 +32,7 @@ describe('Create Category', () => {
     expect(categoryCreated).toHaveProperty('id');
   });
 
-  it('should be able to create a new category with name exists', async () => {
+  it('should not be able to create a new category with name exists', async () => {
     expect(async () => {
       const category = {
         name: 'Category Test',
