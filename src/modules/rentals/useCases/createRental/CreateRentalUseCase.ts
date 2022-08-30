@@ -30,15 +30,17 @@ class CreateRentalUseCase {
   }: IRequest): Promise<Rental> {
     const minimumHoursToRent = 24;
 
-    const carRental = await this.rentalsRepository.findRentalByCar(car_id);
+    const carRental = await this.rentalsRepository.findOpenRentalByCar(car_id);
 
-    if (carRental && !carRental.end_date) {
+    if (carRental) {
       throw new AppError('Car is unavailable');
     }
 
-    const userRental = await this.rentalsRepository.findRentalByUser(user_id);
+    const userRental = await this.rentalsRepository.findOpenRentalByUser(
+      user_id,
+    );
 
-    if (userRental && !userRental.end_date) {
+    if (userRental) {
       throw new AppError("There's a rental in progress for user!");
     }
 
