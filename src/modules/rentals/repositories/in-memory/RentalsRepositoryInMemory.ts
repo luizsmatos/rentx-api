@@ -10,6 +10,9 @@ class RentalsRepositoryInMemory implements IRentalsRepository {
     car_id,
     expected_return_date,
     user_id,
+    end_date,
+    id,
+    total,
   }: ICreateRentalDTO): Promise<Rental> {
     const rental = new Rental();
 
@@ -18,6 +21,9 @@ class RentalsRepositoryInMemory implements IRentalsRepository {
       user_id,
       start_date: new Date(),
       expected_return_date,
+      end_date,
+      id,
+      total,
     });
 
     this.rentals.push(rental);
