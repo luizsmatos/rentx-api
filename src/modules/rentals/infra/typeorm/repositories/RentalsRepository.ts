@@ -13,8 +13,22 @@ class RentalsRepository implements IRentalsRepository {
     this.repository = dataSource.getRepository(Rental);
   }
 
-  async create(data: ICreateRentalDTO): Promise<Rental> {
-    const rental = this.repository.create(data);
+  async create({
+    car_id,
+    expected_return_date,
+    user_id,
+    end_date,
+    id,
+    total,
+  }: ICreateRentalDTO): Promise<Rental> {
+    const rental = this.repository.create({
+      car_id,
+      expected_return_date,
+      user_id,
+      end_date,
+      id,
+      total,
+    });
 
     await this.repository.save(rental);
 
