@@ -4,6 +4,7 @@ import 'dotenv/config';
 import { DataSource } from 'typeorm';
 
 import { User } from '@modules/accounts/infra/typeorm/entities/User';
+import { UserTokens } from '@modules/accounts/infra/typeorm/entities/UserTokens';
 import { Car } from '@modules/cars/infra/typeorm/entities/Car';
 import { Category } from '@modules/cars/infra/typeorm/entities/Category';
 import { Specification } from '@modules/cars/infra/typeorm/entities/Specification';
@@ -17,6 +18,7 @@ import { CreateCars1658087024104 } from './migrations/1658087024104-CreateCars';
 import { CreateSpecificationsCars1659101345586 } from './migrations/1659101345586-CreateSpecificationsCars';
 import { CreateCarImages1660653155823 } from './migrations/1660653155823-CreateCarImages';
 import { CreateRentals1660914311971 } from './migrations/1660914311971-CreateRentals';
+import { CreateUsersToken1663266280278 } from './migrations/1663266280278-CreateUsersToken';
 
 const dataSource = new DataSource({
   type: 'postgres',
@@ -38,8 +40,9 @@ const dataSource = new DataSource({
     CreateSpecificationsCars1659101345586,
     CreateCarImages1660653155823,
     CreateRentals1660914311971,
+    CreateUsersToken1663266280278,
   ],
-  entities: [Category, Specification, User, Car, Rental],
+  entities: [Category, Specification, User, Car, Rental, UserTokens],
   subscribers: [],
 });
 
