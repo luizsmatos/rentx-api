@@ -7,10 +7,10 @@
     "outDir": "./dist",
     "paths": {
       "@modules/*": ["./src/modules/*"],
-      "@middlewares/*": ["src/shared/infra/http/middlewares/*"],
+      "@middlewares/*": ["./src/shared/infra/http/middlewares/*"],
       "@config/*": ["./src/config/*"],
       "@shared/*": ["./src/shared/*"],
-      "@errors/*": ["src/shared/errors/*"],
+      "@errors/*": ["./src/shared/errors/*"],
       "@utils/*": ["./src/utils/*"]
     },
     "esModuleInterop": true,
